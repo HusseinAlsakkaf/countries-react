@@ -1,11 +1,11 @@
 import React from "react";
-import countriesAll from"./countriesAll.json";
 
-const Grid = () =>{
+
+const Grid = ({data}) =>{
 
     return(
       <div>
- {countriesAll.map((el) => {
+ {data.map((el) => {
  
 return (
     <div id="container" className ="container col-sm-4 ">
@@ -13,14 +13,16 @@ return (
   <img id="img" class="card-img-top" src={el.flag} alt="Card image"/>
   <div class="card-body">
 <h4 class="card-title">{el.name}</h4>
-    <p class="card-text">Some example text.</p>
-    <a href="#" class="btn btn-primary">See Profile</a>
+<span class="card-text">population: {el.population.toLocaleString("en")}</span>
+<br/>
+<span class="card-text">Region: {el.region}</span>
+<br/>
+<span class="card-text">Capital: {el.capital}</span>
+   
   </div>
 </div>
   
     </div>
-
-
 );
 
 
