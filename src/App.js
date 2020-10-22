@@ -56,17 +56,24 @@ export default App;
 import countriesAll from"./countriesAll.json";
 import './App.css';
 import Grid from './Grid';
+import Search from './Search';
 
 
-function App() {
-const [q,setQ] = useState("");
+ 
 
+
+
+function App({search}) {
+  
+  const [q,setQ] = useState("");
 function search(countriesAll){
 return countriesAll.filter(result => result.name.toLowerCase().indexOf(q) > -1 || result.capital.toLowerCase().indexOf(q) > -1)
 }
+
+
   return (
     <div>
-      <input type="text" value={q} onChange={(e) => setQ(e.target.value)}/>
+     <Search countriesAll={countriesAll}/>
 <Grid data={search(countriesAll)}/>
     </div>
      
@@ -74,5 +81,9 @@ return countriesAll.filter(result => result.name.toLowerCase().indexOf(q) > -1 |
   );
 }
 
+<<<<<<< HEAD
 export default App;
 */
+=======
+export default App; */
+>>>>>>> parent of 0d9410b... new approach not working
