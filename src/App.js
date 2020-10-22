@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Header from './Header';
 import countriesAll from './countriesAll';
-import SearchBar from './SearchBar';
+import Search from './Search';
 import Continents from './Continents';
 import Grid from './Grid';
 function App() {
@@ -22,12 +20,12 @@ function App() {
   let regionObject = countryObject.filter(country => country.region.toLowerCase().includes(regionsOption.toLowerCase()))
   return (
     <div className="App">
-      <Header />
-      <SearchBar handleSearchInput = {handleSearchInput} searchInput = {searchInput}/>
+      
+      <Search handleSearchInput = {handleSearchInput} searchInput = {searchInput}/>
       <Continents handleRegionEvent = {handleRegionEvent} />
       <div className = 'cards-container'>
       {regionObject.map((country) =>
-        <Grid country = {country} key = {country.alpha2Code}/>
+        <Grid country = {country} />
       )}
       </div>
     </div>

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import countriesAll from './countriesAll';
-const SearchBar = ({updateSearch, handleSearchInput, searchInput}) => {  
+const Search = ({updateSearch, handleSearchInput, searchInput}) => {  
     return (
         <div className = 'SearchBar'>
             <input 
@@ -15,7 +15,7 @@ const SearchBar = ({updateSearch, handleSearchInput, searchInput}) => {
         </div>
     )
 }
-export default SearchBar;
+export default Search;
 
 
 
