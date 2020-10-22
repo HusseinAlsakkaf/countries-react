@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+<<<<<<< HEAD
 import './App.css';
 import countriesAll from './countriesAll';
 import Search from './Search';
@@ -53,6 +54,8 @@ export default App;
 
 
 /* import React, {useState} from 'react';
+=======
+>>>>>>> parent of 228511d... different approach
 import countriesAll from"./countriesAll.json";
 import './App.css';
 import Grid from './Grid';
@@ -75,4 +78,3 @@ return countriesAll.filter(result => result.name.toLowerCase().indexOf(q) > -1 |
 }
 
 export default App;
-*/
