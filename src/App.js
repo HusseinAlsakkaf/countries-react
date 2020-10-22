@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+<<<<<<< HEAD
 import './App.css';
 import countriesAll from './countriesAll';
 import Search from './Search';
@@ -53,27 +54,22 @@ export default App;
 
 
 /* import React, {useState} from 'react';
+=======
+>>>>>>> parent of 228511d... different approach
 import countriesAll from"./countriesAll.json";
 import './App.css';
 import Grid from './Grid';
-import Search from './Search';
 
 
- 
+function App() {
+const [q,setQ] = useState("");
 
-
-
-function App({search}) {
-  
-  const [q,setQ] = useState("");
 function search(countriesAll){
 return countriesAll.filter(result => result.name.toLowerCase().indexOf(q) > -1 || result.capital.toLowerCase().indexOf(q) > -1)
 }
-
-
   return (
     <div>
-     <Search countriesAll={countriesAll}/>
+      <input type="text" value={q} onChange={(e) => setQ(e.target.value)}/>
 <Grid data={search(countriesAll)}/>
     </div>
      
@@ -81,4 +77,4 @@ return countriesAll.filter(result => result.name.toLowerCase().indexOf(q) > -1 |
   );
 }
 
-export default App; */
+export default App;
