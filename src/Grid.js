@@ -1,11 +1,11 @@
 import React from "react";
 
 
-const Grid = ({country}) =>{
+const Grid = ({data}) =>{
 
     return(
       <div>
- {country.map((el) => {
+ {data.map((el) => {
  
 return (
     <div id="container" className ="container col-sm-4 ">
