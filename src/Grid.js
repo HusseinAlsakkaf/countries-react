@@ -1,16 +1,16 @@
 import React from "react";
 
 
-const Grid = ({data}) =>{
+const Grid = ({regionSearchresults,countryHandler}) =>{
 
     return(
       <div>
- {data.map((el) => {
+ {regionSearchresults.map((el) => {
  
 return (
     <div id="container" className ="container col-sm-4 ">
 <div id="card" class="card">
-  <img id="img" class="card-img-top" src={el.flag} alt="Card image"/>
+  <img id="img" class="card-img-top" src={el.flag} alt="Card image" onClick={()=>countryHandler(el)}/>
   <div class="card-body">
 <h4 class="card-title">{el.name}</h4>
 <span class="card-text">population: {el.population.toLocaleString("en")}</span>
