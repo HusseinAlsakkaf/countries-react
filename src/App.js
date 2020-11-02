@@ -28,6 +28,7 @@ function App() {
   const [region, setRegion] = useState("");
   const [displayedpage, setDisplayedpage] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState([]);
+  const [theme, setTheme] = useState("day");
  
 const regionHandler =(event) =>{
 setRegion(event.target.value);
@@ -42,17 +43,29 @@ setSelectedCountry(el);
 const backButton = () =>{
 setDisplayedpage(false);
 }
-const borderHandler = (border) =>{
-  setSelectedCountry(border);
+const borderHandler = (borderCountry) =>{
+  setSelectedCountry(borderCountry[0]);
+}
+const themChanger =()=>{
+  if(theme ==="night"){
+    setTheme("day")
+  } else{
+    setTheme("night")
+  }
 }
 
 
   return (
-    <div>
-  <input type="text" value={inputSearch} onChange={(e) => setInputSearch(e.target.value)}/>
+    <div className ={theme}>
+      <div className ="header">
+        
+  <input className ="searchbar"placeholder="Search here" type="text" value={inputSearch} onChange={(e) => setInputSearch(e.target.value)}/>
+  <button className="btn-primary"onClick={themChanger}>Change Theme</button>
      <RegionSelect regionHandler={regionHandler}/>
-     {displayedpage? (<CountrySelect selectedCountry={selectedCountry} backButton={backButton} borderHandler={borderHandler}/>) : null}
-{!displayedpage? (<Grid regionSearchresults={regionSearchresults} countryHandler={countryHandler}/>) : null}
+      </div>
+      
+     {displayedpage? (<CountrySelect countriesAll={countriesAll} selectedCountry={selectedCountry} backButton={backButton} borderHandler={borderHandler}/>) : null}
+{!displayedpage? (<Grid regionSearchresults={regionSearchresults} countryHandler={countryHandler} theme={theme}/>) : null}
     </div>
      
     

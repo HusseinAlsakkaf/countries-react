@@ -43,3 +43,39 @@
     transform: rotate(360deg);
   }
 }
+.night{
+background-color: #282c34;
+color: white;
+}
+.day{
+background-color: aliceblue;
+}
+.header{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+ 
+}
+.theme-btn{
+  
+}
+#card{
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
+}
+#flag{
+   width: 30em;
+}
+#back-btn{
+  width: 130px;
+  height: 60px;
+  margin: 50px;
+}
+
+.searchbar{
+  width: 30%;
+}
+#flagBorder{
+  width: 12em;
+}

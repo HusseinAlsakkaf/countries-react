@@ -1,10 +1,11 @@
 import React from "react";
-import countriesAll from"./countriesAll.json";
+import BorderCountries from "./BorderCountries";
 function CountrySelect({ selectedCountry, backButton, borderHandler}) {
+  
   return (
     <div className="singleCard">
       <div>
-        <img src={selectedCountry.flag} className="flags" alt="flag"></img>
+        <img id="flag" src={selectedCountry.flag} className="flags" alt="flag"></img>
         <h3>{selectedCountry.name}</h3>
         <p>Native Name: {selectedCountry.nativeName}</p>
         <p>Population: {selectedCountry.population.toLocaleString()}</p>
@@ -25,17 +26,12 @@ function CountrySelect({ selectedCountry, backButton, borderHandler}) {
         
         <ul>
          
-           Bordering Countries: {selectedCountry.borders.map((border)=>(
-            
-             
-            
-                <li /* onClick={borderHandler(border)} */>{border}</li>
-              
-            ))}
+           Bordering Countries: 
+            <BorderCountries borders={selectedCountry.borders} borderHandler={borderHandler}/>
             
         </ul>
       </div>
-      <button onClick={backButton}>Back</button>
+      <button id="back-btn"className="btn-primary"onClick={backButton}>Back</button>
     </div>
   );
 }

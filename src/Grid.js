@@ -1,23 +1,23 @@
 import React from "react";
 
 
-const Grid = ({regionSearchresults,countryHandler}) =>{
+const Grid = ({regionSearchresults,countryHandler,theme}) =>{
 
     return(
       <div>
  {regionSearchresults.map((el) => {
  
 return (
-    <div id="container" className ="container col-sm-4 ">
-<div id="card" class="card">
-  <img id="img" class="card-img-top" src={el.flag} alt="Card image" onClick={()=>countryHandler(el)}/>
-  <div class="card-body">
-<h4 class="card-title">{el.name}</h4>
-<span class="card-text">population: {el.population.toLocaleString("en")}</span>
+    <div id="container" className ="container col-sm-4">
+<div id="card" className={"card" + theme} >
+  <img id="img" className="card-img-top" src={el.flag} alt="Card image" onClick={()=>countryHandler(el)}/>
+  <div className="card-body">
+<h4 className="card-title">{el.name}</h4>
+<span className="card-text">population: {el.population.toLocaleString("en")}</span>
 <br/>
-<span class="card-text">Region: {el.region}</span>
+<span className="card-text">Region: {el.region}</span>
 <br/>
-<span class="card-text">Capital: {el.capital}</span>
+<span className="card-text">Capital: {el.capital}</span>
    
   </div>
 </div>
